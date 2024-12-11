@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Commande;
 use App\Models\Fournisseur;
+use App\Models\Article;
+use App\Models\LigneCommande;
 use Illuminate\Http\Request;
 
 class CommandeController extends Controller
@@ -19,21 +21,44 @@ class CommandeController extends Controller
   public function create()
   {
       $fournisseurs = Fournisseur::all(); // Récupérer tous les fournisseurs
-      return view('commandes.create', compact('fournisseurs'));
+    $articles = Article::all();
+      return view('commandes.create', compact('fournisseurs','articles'));
   }
 
   // Enregistre une nouvelle commande
   public function store(Request $request)
   {
       $request->validate([
-          'fournisseur_id' => 'required|exists:fournisseurs,id', // Validation de la relation fournisseur
-          'date_commande' => 'required|date',
-          'status' => 'required|string|max:255',
+         'fournisseur_id' => 'required|exists:fournisseurs,id',
+            'date_commande' => 'required|date',
+            'status' => 'required|string',
+            'lignes' => 'required|array',
+            'lignes.*.article_id' => 'required|exists:articles,id',
+            'lignes.*.quantite' => 'required|numeric|min:1',
+            'lignes.*.prix_unitaire' => 'required|numeric|min:0',
       ]);
 
       // Créer une nouvelle commande
-      Commande::create($request->all());
-      return redirect()->route('commandes.index')->with('success', 'Commande créée avec succès.');
+       // Création de la commande
+       $commande = new Commande();
+       $commande->fournisseur_id = $request->fournisseur_id;
+       $commande->date_commande = $request->date_commande;
+       $commande->status = $request->status;
+       $commande->save();
+
+       // Enregistrer les lignes de commande
+       foreach ($request->lignes as $ligne) {
+           $ligneCommande = new LigneCommande();
+           $ligneCommande->commande_id = $commande->id;
+           $ligneCommande->article_id = $ligne['article_id'];
+           $ligneCommande->quantite = $ligne['quantite'];
+           $ligneCommande->prix_unitaire = $ligne['prix_unitaire'];
+           $ligneCommande->save();
+       }
+
+       // Retourner un message de succès
+       return redirect()->route('commandes.index')->with('success', 'Commande créée avec succès.');
+
   }
 
   // Affiche les détails d'une commande

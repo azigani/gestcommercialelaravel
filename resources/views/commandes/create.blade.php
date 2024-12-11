@@ -48,10 +48,71 @@
                 <input type="text" name="status" id="status" class="form-control" required>
             </div>
 
+            <!-- Lignes de Commande -->
+            <h4>Lignes de Commande</h4>
+            <div id="lignes-container">
+                <div class="ligne-commande">
+                    <div class="form-group">
+                        <label for="article_id">Article</label>
+                        <select name="lignes[0][article_id]" class="form-control" required>
+                            <option value="">Choisissez un article</option>
+                            @foreach($articles as $article)
+                                <option value="{{ $article->id }}">{{ $article->nom }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantite">Quantité</label>
+                        <input type="number" name="lignes[0][quantite]" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prix_unitaire">Prix Unitaire</label>
+                        <input type="number" step="0.01" name="lignes[0][prix_unitaire]" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="add-line" class="btn btn-info btn-rounded">
+                Ajouter une ligne
+            </button>
+
             <button type="submit" class="btn btn-primary btn-rounded">
                 <i class="fa fa-check"></i> Créer la Commande
             </button>
         </form>
     </div>
 </div>
+
+<script>
+    document.getElementById('add-line').addEventListener('click', function() {
+        const container = document.getElementById('lignes-container');
+        const ligneCount = container.children.length;
+        const newLine = `
+            <div class="ligne-commande">
+                <div class="form-group">
+                    <label for="article_id">Article</label>
+                    <select name="lignes[${ligneCount}][article_id]" class="form-control" required>
+                        <option value="">Choisissez un article</option>
+                        @foreach($articles as $article)
+                            <option value="{{ $article->id }}">{{ $article->nom }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantite">Quantité</label>
+                    <input type="number" name="lignes[${ligneCount}][quantite]" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prix_unitaire">Prix Unitaire</label>
+                    <input type="number" step="0.01" name="lignes[${ligneCount}][prix_unitaire]" class="form-control" required>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', newLine);
+    });
+</script>
 @endsection

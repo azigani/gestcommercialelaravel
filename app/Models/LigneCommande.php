@@ -9,7 +9,7 @@ class LigneCommande extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['commande_id', 'article_id', 'quantite'];
+    protected $fillable = ['commande_id', 'article_id', 'quantite', 'prix_unitaire'];
 
     public function commande()
     {
