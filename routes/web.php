@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommandeController;
+use App\Http\Controllers\FournisseurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,6 @@ use Illuminate\Support\Facades\Route;
 
  Route::resource('categories', CategorieController::class);
  Route::resource('articles', ArticleController::class);
+ Route::resource('commandes', CommandeController::class);
+ Route::resource('fournisseurs', FournisseurController::class);
+

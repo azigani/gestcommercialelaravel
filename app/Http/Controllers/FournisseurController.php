@@ -7,25 +7,26 @@ use Illuminate\Http\Request;
 
 class FournisseurController extends Controller
 {
-    // Affiche la liste des fournisseurs
     public function index()
     {
         $fournisseurs = Fournisseur::paginate(10);
         return view('fournisseurs.index', compact('fournisseurs'));
     }
 
-    // Affiche le formulaire de création
+    // Afficher le formulaire pour créer un nouveau fournisseur
     public function create()
     {
         return view('fournisseurs.create');
     }
 
-    // Enregistre un nouveau fournisseur
+    // Enregistrer un nouveau fournisseur
     public function store(Request $request)
     {
         $request->validate([
             'nom' => 'required|string|max:255',
-            'email' => 'required|email|unique:fournisseurs',
+            'email' => 'required|email|max:255',
+            'telephone' => 'required|string|max:15',
+            'adresse' => 'required|string|max:255',
         ]);
 
         Fournisseur::create($request->all());
@@ -33,24 +34,26 @@ class FournisseurController extends Controller
         return redirect()->route('fournisseurs.index')->with('success', 'Fournisseur créé avec succès.');
     }
 
-    // Affiche les détails d'un fournisseur
+    // Afficher les détails d'un fournisseur
     public function show(Fournisseur $fournisseur)
     {
         return view('fournisseurs.show', compact('fournisseur'));
     }
 
-    // Affiche le formulaire de modification
+    // Afficher le formulaire de modification d'un fournisseur
     public function edit(Fournisseur $fournisseur)
     {
         return view('fournisseurs.edit', compact('fournisseur'));
     }
 
-    // Met à jour le fournisseur
+    // Mettre à jour un fournisseur
     public function update(Request $request, Fournisseur $fournisseur)
     {
         $request->validate([
             'nom' => 'required|string|max:255',
-            'email' => 'required|email|unique:fournisseurs,email,' . $fournisseur->id,
+            'email' => 'required|email|max:255',
+            'telephone' => 'required|string|max:15',
+            'adresse' => 'required|string|max:255',
         ]);
 
         $fournisseur->update($request->all());
@@ -58,11 +61,10 @@ class FournisseurController extends Controller
         return redirect()->route('fournisseurs.index')->with('success', 'Fournisseur mis à jour avec succès.');
     }
 
-    // Supprime le fournisseur
+    // Supprimer un fournisseur
     public function destroy(Fournisseur $fournisseur)
     {
         $fournisseur->delete();
-
         return redirect()->route('fournisseurs.index')->with('success', 'Fournisseur supprimé avec succès.');
     }
 }
