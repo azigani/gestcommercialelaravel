@@ -28,7 +28,7 @@
                     <i class="ti-user bg-megna"></i>
                     <div class="bodystate">
                         <h4>370</h4>
-                        <span class="text-muted">New Patient</span>
+                        <span class="text-muted">Catgeorie la plus demandée</span>
                     </div>
                 </div>
             </div>

@@ -9,85 +9,29 @@
     </span> </div>
                 <!-- /input-group -->
             </li>
-            <li class="user-pro">
-                <a href="#" class="waves-effect"><img src="template_hmtl/plugins/images/users/d1.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">Dr. Steve Gection<span class="fa arrow"></span></span>
-                </a>
+            <li> <a href="index.blade.php" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Tableau de bord</span></a> </li>
+            </li>
+            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-list p-r-10"></i> <span class="hide-menu"> Categories <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                    <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
-                    <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
+                    <li> <a href="{{ route('categories.index') }}">Liste categorie</a></li>
+                    <li> <a href="{{ route('categories.create') }}">Ajouter</a></li>
                 </ul>
             </li>
-            <li class="nav-small-cap m-t-10">--- Main Menu</li>
-            <li> <a href="index.html" class="waves-effect"><i class="ti-dashboard p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="linea-icon linea-basic fa-fw text-danger" data-icon="7"></i> <span class="hide-menu text-danger"> Multipurpose <span class="fa arrow"></span> <span class="label label-rouded label-danger pull-right">HOT</span></span></a>
+
+
+
+            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Factures <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="../eliteadmin-hospital/index.html">Hospital Admin</a> </li>
-                    <li> <a href="../eliteadmin-crm/index.html">CRM Admin</a> </li>
-                    <li> <a href="../eliteadmin-university/index.html">University Admin</a> </li>
-                    <li> <a href="../eliteadmin-music/index.html">Music Admin</a> </li>
-                    <li> <a href="../eliteadmin-real-estate/index.html">Real Estate Admin</a> </li>
-                    <li role="separator" class="divider"></li>
-                    <li> <a href="../eliteadmin-inverse/index.html">Inverse</a></li>
-                    <li> <a href="../eliteadmin-colors/index.html">Colors</a></li>
-                    <li> <a href="../eliteadmin/index.html">Eliteadmin</a></li>
-                    <li> <a href="../eliteadmin-wpmenu/index.html">Wpmenu</a></li>
-                    <li> <a href="../eliteadmin-ecommerce/index.html">Ecommerce</a></li>
-                    <li> <a href="../eliteadmin-modern/index.html">Modern</a></li>
-                    <li> <a href="../eliteadmin-inverse-php/index.php">Basic PHP</a></li>
-                    <li> <a href="../eliteadmin-material/index3.html">Material Design</a></li>
-                    <li> <a href="../eliteadmin-dark/index.html">Dark</a></li>
-                    <li> <a href="../eliteadmin-mini-sidebar/index3.html">Mini Sidebar</a></li>
-                    <li> <a href="../eliteadmin-horizontal-navbar/index3.html">Horizontal Boxed Nav</a></li>
-                    <li> <a href="../eliteadmin-horizontal-nav-fullwidth/index.html">Horizontal Full Nav</a></li>
-                    <li> <a href="../eliteadmin-iconbar/index4.html">Iconbar</a></li>
-                    <li> <a href="../eliteadmin-rtl/index.html">Eliteadmin RTL</a></li>
-                    <li> <a href="../eliteadmin-inverse-rtl/index.html">Inverse RTL</a></li>
+                    <li> <a href="payment-report.html">Ajouter</a></li>
+                    <li> <a href="income-report.html">Modifier</a></li>
+                    <li> <a href="sales-report.html">Liste</a></li>
                 </ul>
             </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-envelope p-r-10"></i> <span class="hide-menu"> Mailbox <span class="fa arrow"></span><span class="label label-rouded label-danger pull-right">6</span></span></a>
+            <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Articles <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
-                    <li> <a href="inbox.html">Inbox</a></li>
-                    <li> <a href="inbox-detail.html">Inbox detail</a></li>
-                    <li> <a href="compose.html">Compose mail</a></li>
-                </ul>
-            </li>
-            <li class="nav-small-cap m-t-10">--- Professional</li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar p-r-10"></i> <span class="hide-menu"> Appointment <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="doctor-schedule.html">Doctor Schedule</a> </li>
-                    <li> <a href="book-appointment.html">Book Appointment</a> </li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-user-md p-r-10"></i> <span class="hide-menu"> Doctors <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="doctors.html">All Doctors</a> </li>
-                    <li> <a href="add-doctor.html">Add Doctor</a> </li>
-                    <li> <a href="edit-doctor.html">Edit Doctor</a> </li>
-                    <li> <a href="doctor-profile.html">Doctor Profile</a> </li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-people p-r-10"></i> <span class="hide-menu"> Patients <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="patients.html">All Patients</a> </li>
-                    <li> <a href="add-patient.html">Add Patient</a> </li>
-                    <li> <a href="edit-patient.html">Edit Patient</a> </li>
-                    <li> <a href="patient-profile.html">Patient Profile</a> </li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Reports <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="payment-report.html">Payment Report</a></li>
-                    <li> <a href="income-report.html">Income Report</a></li>
-                    <li> <a href="sales-report.html">Sales Report</a></li>
-                </ul>
-            </li>
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Payments <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="payments.html">Payments</a></li>
-                    <li> <a href="add-payments.html">Add Payment</a></li>
-                    <li> <a href="patient-invoice.html">Patient Invoice</a></li>
+                    <li> <a href="{{ route('articles.index') }}">Liste</a></li>
+                    <li> <a href="{{ route('articles.create') }}">Ajouter </a></li>
+                    <li> <a href="{{ route('articles.index') }}">Modifier</a></li>
                 </ul>
             </li>
             <li> <a href="widgets.html" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Widgets</span></a> </li>

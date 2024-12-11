@@ -137,14 +137,17 @@
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img
-                        src="/assets/plugins/images/users/d1.jpg" alt="user-img" width="36"
-                        class="img-circle"><b class="hidden-xs">Dr. Steave</b> </a>
+
+
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <b class="hidden-xs">ZIGANI</b>
+                        </a>
                 <ul class="dropdown-menu dropdown-user animated flipInY">
-                    <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                    <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
-                    <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
-                    <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
+                    <li><a href="javascript:void(0)"><i class="ti-user"></i> Mon Profile</a></li>
+                    <li><a href="javascript:void(0)"><i class="ti-email"></i> mails</a></li>
+                    <li><a href="javascript:void(0)"><i class="ti-settings"></i> Parametre compte</a></li>
+                    <li><a href="login.html"><i class="fa fa-power-off"></i> Deconnexion</a></li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>
