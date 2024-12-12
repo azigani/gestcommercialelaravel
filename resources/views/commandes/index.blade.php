@@ -39,7 +39,7 @@
                     @foreach($commandes as $commande)
                     <tr class="text-center">
                         <td>{{ $commande->id }}</td>
-                        <td>{{ $commande->fournisseur->nom }}</td>
+                        <td>{{ $commande->fournisseur->nom ?? 'Non défini' }}</td>
                         <td>{{ $commande->date_commande }}</td>
                         <td>{{ $commande->status }}</td>
                         <td>

@@ -17,21 +17,23 @@
                     <li> <a href="{{ route('categories.create') }}">Ajouter</a></li>
                 </ul>
             </li>
-
-
-
-            <li> <a href="javascript:void(0);" class="waves-effect"><i class="icon-chart p-r-10"></i> <span class="hide-menu"> Factures <span class="fa arrow"></span></span></a>
-                <ul class="nav nav-second-level">
-                    <li> <a href="payment-report.html">Ajouter</a></li>
-                    <li> <a href="income-report.html">Modifier</a></li>
-                    <li> <a href="sales-report.html">Liste</a></li>
-                </ul>
-            </li>
             <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-inr p-r-10"></i> <span class="hide-menu"> Articles <span class="fa arrow"></span></span></a>
                 <ul class="nav nav-second-level">
                     <li> <a href="{{ route('articles.index') }}">Liste</a></li>
                     <li> <a href="{{ route('articles.create') }}">Ajouter </a></li>
                     <li> <a href="{{ route('articles.index') }}">Modifier</a></li>
+                </ul>
+            </li>  <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-sharp fa-solid fa-cart-plus"></i> <span class="hide-menu"> Commandes <span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <li> <a href="{{ route('commandes.index') }}">Liste</a></li>
+                    <li> <a href="{{ route('commandes.create') }}">Ajouter </a></li>
+                </ul>
+            </li>
+          </li>  <li> <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-truck p-r-10"></i>
+            <span class="hide-menu"> Fournisseurs <span class="fa arrow"></span></span></a>
+                <ul class="nav nav-second-level">
+                    <li> <a href="{{ route('fournisseurs.index') }}">Liste</a></li>
+                    <li> <a href="{{ route('fournisseurs.create') }}">Ajouter </a></li>
                 </ul>
             </li>
             <li> <a href="widgets.html" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Widgets</span></a> </li>
